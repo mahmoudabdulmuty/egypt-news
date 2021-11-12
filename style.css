@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--text-color: #fffbf1;
+}
+
+body {
+	background: #485563; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#29323c,
+		#485563
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#29323c,
+		#485563
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.header-title {
+	color: var(--text-color);
+	text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
+	font-size: 80px;
+	margin: 2rem;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+}
+
+.article {
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+	gap: 2rem;
+}
+.article-img {
+	flex: 1;
+}
+.article-heading {
+	flex: 3;
+	text-align: center;
+	color: var(--text-color);
+}
+.article-title {
+	margin-bottom: 1rem;
+}
+.article-description {
+	line-height: 1.7;
+	margin-bottom: 2rem;
+}
+.article-link {
+	display: inline-block;
+	padding: 0.35em 1.2em;
+	border: 0.1em solid #ffffff;
+	margin: 0 0.3em 0.3em 0;
+	border-radius: 0.12em;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	color: #ffffff;
+	text-align: center;
+	transition: all 0.2s;
+}
+.article-link:hover {
+	color: #000000;
+	background-color: #ffffff;
+}
+.article-img img {
+	width: 100%;
+}
