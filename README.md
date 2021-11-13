@@ -18,7 +18,7 @@ To run this project, install it locally using Live Server Package with npm:
 ```
 $ npm i live-server
 ```
-or you can run the it with Live Server extension at vs code through this url **[Live Server
+or you can run it with Live Server extension at vs code through this url **[Live Server
 ](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)**
 
 ## Developer 
