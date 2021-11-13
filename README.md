@@ -1,4 +1,4 @@
-# Egypt-Latest-News
+# Egypt News
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
