@@ -32,7 +32,9 @@ body {
 	text-align: center;
 	cursor: pointer;
 }
-
+.navbar {
+	margin-bottom: 3rem;
+}
 .nav-items {
 	list-style-type: none;
 	display: flex;
@@ -57,7 +59,7 @@ body {
 	flex: 1;
 }
 .article-heading {
-	flex: 3;
+	flex: 1;
 	text-align: center;
 	color: var(--text-color);
 }
@@ -69,7 +71,8 @@ body {
 	margin-bottom: 2rem;
 }
 .article-link {
-	display: inline-block;
+	display: block;
+	width: 20%;
 	padding: 0.35em 1.2em;
 	border: 0.1em solid #ffffff;
 	margin: 0 0.3em 0.3em 0;
