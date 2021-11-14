@@ -1,9 +1,9 @@
-const apiLink = 'https://newsapi.org/v2/top-headlines?country=eg';
-const apiKey = '&apiKey=3bd4753c68144c04b3eb73e44b7da657';
-const articleEl = document.createElement('article');
-
 function createArticle(category) {
-	articleEl.textContent = '';
+	const apiLink = 'https://newsapi.org/v2/top-headlines?country=eg';
+	const apiKey = '&apiKey=3bd4753c68144c04b3eb73e44b7da657';
+
+	document.querySelector('.main').textContent = '';
+
 	const xhr = new XMLHttpRequest();
 	xhr.open('GET', apiLink + category + apiKey);
 	xhr.onload = function () {
@@ -11,7 +11,7 @@ function createArticle(category) {
 		if (this.status === 200) {
 			articles.forEach((article) => {
 				const { title, description, url, urlToImage } = article;
-				articleEl.innerHTML += `
+				document.querySelector('.main').innerHTML += `
         <article class="article">
         <div class="article-img">
           <img src="${urlToImage || ''}"/>
@@ -19,12 +19,11 @@ function createArticle(category) {
         <div class="article-heading">
           <h2 class="article-title">${title}</h2>
           <p class="article-description">${description || ''}</p>
-          <a class="article-link" target="_blank" href="${url}">مشاهدة المزيد</a>
+          <a class="article-link" target="_blank" href="${url}">قراءة المزيد</a>
         </div>
       </article>`;
 			});
 		}
-		document.querySelector('.main').append(articleEl);
 	};
 	xhr.send();
 }
