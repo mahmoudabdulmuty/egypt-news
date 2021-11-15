@@ -1,7 +1,8 @@
-function createArticle(category) {
-	const apiLink = 'https://newsapi.org/v2/top-headlines?country=eg';
+function createArticle({
+	apiLink = 'https://newsapi.org/v2/top-headlines?country=eg',
+	category = ''
+}) {
 	const apiKey = '&apiKey=3bd4753c68144c04b3eb73e44b7da657';
-
 	document.querySelector('.main').textContent = '';
 
 	const xhr = new XMLHttpRequest();
@@ -29,33 +30,45 @@ function createArticle(category) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-	createArticle('');
+	createArticle({});
 });
 
 document.querySelector('.header-title').addEventListener('click', function () {
-	createArticle('');
+	createArticle({});
 });
 
 document.querySelector('.business').addEventListener('click', function () {
-	createArticle('&category=business');
+	createArticle({
+		category: '&category=business'
+	});
 });
 
 document.querySelector('.entertainment').addEventListener('click', function () {
-	createArticle('&category=entertainment');
+	createArticle({
+		category: '&category=entertainment'
+	});
 });
 
 document.querySelector('.health').addEventListener('click', function () {
-	createArticle('&category=health');
+	createArticle({
+		category: '&category=health'
+	});
 });
 
 document.querySelector('.science').addEventListener('click', function () {
-	createArticle('&category=science');
+	createArticle({
+		category: '&category=science'
+	});
 });
 
 document.querySelector('.sports').addEventListener('click', function () {
-	createArticle('&category=sports');
+	createArticle({
+		category: '&category=sports'
+	});
 });
 
 document.querySelector('.technology').addEventListener('click', function () {
-	createArticle('&category=technology');
+	createArticle({
+		category: '&category=technology'
+	});
 });
