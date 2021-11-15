@@ -2,7 +2,7 @@ function createArticle({
 	apiLink = 'https://newsapi.org/v2/top-headlines?country=eg',
 	category = ''
 }) {
-	const apiKey = '&apiKey=3bd4753c68144c04b3eb73e44b7da657';
+	const apiKey = '&apiKey=a94d31166e044e38b8a83507ca9942a3';
 	document.querySelector('.main').textContent = '';
 
 	const xhr = new XMLHttpRequest();
