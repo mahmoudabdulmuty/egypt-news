@@ -1,7 +1,7 @@
-function createArticle({
-	apiLink = 'https://newsapi.org/v2/top-headlines?country=eg',
-	category = ''
-}) {
+function createArticle(
+	category = '',
+	apiLink = 'https://newsapi.org/v2/top-headlines?country=eg'
+) {
 	const apiKey = '&apiKey=a94d31166e044e38b8a83507ca9942a3';
 	document.querySelector('.main').textContent = '';
 
@@ -32,56 +32,44 @@ function createArticle({
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-	createArticle({});
+	createArticle();
 });
 
 document.querySelector('.header-title').addEventListener('click', function () {
-	createArticle({});
+	createArticle();
 });
 
 document.querySelector('.business').addEventListener('click', function () {
-	createArticle({
-		category: '&category=business'
-	});
+	createArticle((category = '&category=business'));
 });
 
 document.querySelector('.entertainment').addEventListener('click', function () {
-	createArticle({
-		category: '&category=entertainment'
-	});
+	createArticle((category = '&category=entertainment'));
 });
 
 document.querySelector('.health').addEventListener('click', function () {
-	createArticle({
-		category: '&category=health'
-	});
+	createArticle((category = '&category=health'));
 });
 
 document.querySelector('.science').addEventListener('click', function () {
-	createArticle({
-		category: '&category=science'
-	});
+	createArticle((category = '&category=science'));
 });
 
 document.querySelector('.sports').addEventListener('click', function () {
-	createArticle({
-		category: '&category=sports'
-	});
+	createArticle((category = '&category=sports'));
 });
 
 document.querySelector('.technology').addEventListener('click', function () {
-	createArticle({
-		category: '&category=technology'
-	});
+	createArticle((category = '&category=technology'));
 });
 
 // Search Query Function
 function searchQuery() {
 	const query = document.querySelector('.search-input').value;
-	createArticle({
-		apiLink: 'https://newsapi.org/v2/everything?q=',
-		category: query
-	});
+	createArticle(
+		(category = query),
+		(apiLink = 'https://newsapi.org/v2/everything?q=')
+	);
 	document.querySelector('.search-input').value = '';
 }
 
