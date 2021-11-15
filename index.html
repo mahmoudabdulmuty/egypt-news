@@ -10,12 +10,21 @@
 			href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&family=Vibes&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+			integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link rel="stylesheet" href="style.css" />
 		<title>أخبار مصر</title>
 	</head>
 	<body>
 		<header class="header">
-			<h1 class="header-title">أخبار مصر</h1>
+			<h1 class="header-title">
+				<a class="header-title-link" href="#">أخبار مصر</a>
+			</h1>
 		</header>
 		<nav class="navbar">
 			<ul class="nav-items">
@@ -39,6 +48,14 @@
 				</a>
 			</ul>
 		</nav>
+		<div class="search-container">
+			<div class="search-box">
+				<input class="search-input" type="text" placeholder="كلمة البحث" />
+				<button class="search-button" href="#">
+					<i class="fas fa-search"></i>
+				</button>
+			</div>
+		</div>
 		<main class="main"></main>
 	</body>
 	<script src="app.js"></script>

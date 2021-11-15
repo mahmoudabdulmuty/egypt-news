@@ -9,11 +9,11 @@
 body {
 	font-family: 'Noto Sans Arabic', sans-serif;
 	font-weight: 400;
+	color: var(--text-color);
 	background: linear-gradient(to right, #29323c, #485563);
 }
 .header-title {
 	font-family: 'Vibes', serif;
-	color: var(--text-color);
 	text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
 	font-size: 80px;
 	margin: 2rem;
@@ -22,6 +22,12 @@ body {
 	text-align: center;
 	cursor: pointer;
 }
+
+.header-title-link {
+	color: var(--text-color);
+	text-decoration: none;
+}
+
 .navbar {
 	margin-bottom: 3rem;
 }
@@ -32,8 +38,8 @@ body {
 	gap: 7rem;
 }
 .nav-items > * {
-	text-decoration: none;
 	color: var(--text-color);
+	text-decoration: none;
 	font-size: 1.5rem;
 	font-weight: 700;
 }
@@ -52,7 +58,6 @@ body {
 .article-heading {
 	flex: 1;
 	text-align: center;
-	color: var(--text-color);
 }
 .article-title {
 	margin-bottom: 1rem;
@@ -65,19 +70,72 @@ body {
 	display: block;
 	width: 20%;
 	padding: 0.35em 1.2em;
-	border: 0.1em solid #ffffff;
+	border: 0.1em solid #fff;
 	margin: 0 0.3em 0.3em 0;
 	border-radius: 0.12em;
 	box-sizing: border-box;
 	text-decoration: none;
-	color: #ffffff;
+	color: var(--text-color);
 	text-align: center;
 	transition: all 0.2s;
 }
 .article-link:hover {
-	color: #000000;
-	background-color: #ffffff;
+	color: #000;
+	background-color: #fff;
 }
 .article-img img {
 	width: 100%;
+}
+.search-container {
+	display: flex;
+}
+.search-box {
+	display: flex;
+	position: relative;
+	top: -50px;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	background: #2f3640;
+	border-radius: 40px;
+	padding: 10px;
+}
+
+.search-box:hover > .search-input {
+	width: 240px;
+	padding: 0 6px;
+}
+
+.search-box:hover > .search-button {
+	background: #fff;
+	color: #2f3640;
+}
+.search-button {
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #2f3640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.4s;
+}
+
+.search-input {
+	border: none;
+	background: none;
+	outline: none;
+	color: #fff;
+	font-size: 16px;
+	transition: 0.4s;
+	line-height: 40px;
+	width: 0;
+	direction: rtl;
+}
+
+@media screen and (max-width: 620px) {
+	.search-box:hover > .search-input {
+		width: 150px;
+		padding: 0 6px;
+	}
 }

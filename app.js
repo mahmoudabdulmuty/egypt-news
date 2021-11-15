@@ -9,7 +9,9 @@ function createArticle({
 	xhr.open('GET', apiLink + category + apiKey);
 	xhr.onload = function () {
 		const articles = JSON.parse(this.response).articles;
-		if (this.status === 200) {
+		if (articles.length === 0)
+			document.querySelector('.main').innerHTML = 'No data Found';
+		else if (this.status === 200) {
 			articles.forEach((article) => {
 				const { title, description, url, urlToImage } = article;
 				document.querySelector('.main').innerHTML += `
@@ -72,3 +74,22 @@ document.querySelector('.technology').addEventListener('click', function () {
 		category: '&category=technology'
 	});
 });
+
+// Search Query Function
+function searchQuery() {
+	const query = document.querySelector('.search-input').value;
+	createArticle({
+		apiLink: 'https://newsapi.org/v2/everything?q=',
+		category: query
+	});
+}
+
+document.querySelector('.search-button').addEventListener('click', function () {
+	if (document.querySelector('.search-input').value.length > 0) searchQuery();
+});
+
+document
+	.querySelector('.search-input')
+	.addEventListener('keypress', function (e) {
+		if (e.key === 'Enter') searchQuery();
+	});
