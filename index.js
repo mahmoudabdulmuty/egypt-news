@@ -18,7 +18,9 @@ function createArticle(
         <article class="article">
         <div class="article-img">
           <img src="${
-						!urlToImage || urlToImage.includes('muhtwaplus')
+						!urlToImage ||
+						urlToImage.includes('muhtwaplus') ||
+						urlToImage.includes('aljazeera.net')
 							? './img/No-Image-Available.jpg'
 							: urlToImage
 					}"/>
