@@ -17,7 +17,11 @@ function createArticle(
 				document.querySelector('.main').innerHTML += `
         <article class="article">
         <div class="article-img">
-          <img src="${urlToImage ?? './img/No-Image-Available.jpg'}"/>
+          <img src="${
+						!urlToImage || urlToImage.includes('muhtwaplus')
+							? './img/No-Image-Available.jpg'
+							: urlToImage
+					}"/>
         </div>
         <div class="article-heading">
           <h2 class="article-title">${title}</h2>
