@@ -39,9 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	createArticle();
 });
 
-document.querySelector('.header-title').addEventListener('click', function () {
-	createArticle();
-});
+document
+	.querySelector('.header-title-link')
+	.addEventListener('click', function () {
+		createArticle();
+	});
 
 document.querySelector('.business').addEventListener('click', function () {
 	createArticle((category = '&category=business'));
