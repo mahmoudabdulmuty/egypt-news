@@ -10,13 +10,6 @@
 			href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&family=Vibes&display=swap"
 			rel="stylesheet"
 		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-			integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
 		<link rel="stylesheet" href="style.css" />
 		<title>أخبار مصر</title>
 	</head>
@@ -26,35 +19,30 @@
 				<a class="header-title-link" href="#">أخبار مصر</a>
 			</h1>
 		</header>
-		<nav class="navbar">
-			<ul class="nav-items">
-				<a class="business" name="business" href="#">
-					<li>مال وأعمال</li>
-				</a>
-				<a class="entertainment" name="entertainment" href="#">
-					<li>ترفية</li>
-				</a>
-				<a class="health" name="health" href="#">
-					<li>صحة</li>
-				</a>
-				<a class="science" name="science" href="#">
-					<li>علوم</li>
-				</a>
-				<a class="sports" name="sports" href="#">
-					<li>رياضة</li>
-				</a>
-				<a class="technology" name="technology" href="#">
-					<li>تكنولوجيا</li>
-				</a>
+		<menu class="menubar">
+			<ul class="menu-items">
+				<li>
+					<a class="menu-link business" name="business" href="#">
+						مال وأعمال
+					</a>
+				</li>
+				<li>
+					<a class="menu-link entertainment" name="entertainment" href="#"
+						>ترفية</a
+					>
+				</li>
+				<li><a class="menu-link health" name="health" href="#">صحة</a></li>
+				<li><a class="menu-link science" name="science" href="#">علوم</a></li>
+				<li><a class="menu-link sports" name="sports" href="#">رياضة</a></li>
+				<li>
+					<a class="menu-link technology" name="technology" href="#"
+						>تكنولوجيا</a
+					>
+				</li>
 			</ul>
-		</nav>
-		<div class="search-container">
-			<div class="search-box">
-				<input class="search-input" type="text" placeholder="كلمة البحث" />
-				<button class="search-button" href="#">
-					<i class="fas fa-search"></i>
-				</button>
-			</div>
+		</menu>
+		<div class="search">
+			<input class="search-input" type="text" placeholder="بحث" />
 		</div>
 		<main class="main"></main>
 	</body>
