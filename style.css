@@ -17,10 +17,7 @@ body {
 a {
 	text-decoration: none;
 }
-*:focus {
-	outline: none;
-	box-shadow: 0 0 0 0.8rem #156ec7b4;
-}
+
 /************************/
 /*       HEADER        */
 /**********************/
@@ -99,6 +96,10 @@ a {
 }
 .search-input::placeholder {
 	color: rgba(255, 255, 255, 0.5);
+}
+.search-input:focus {
+	outline: none;
+	box-shadow: 0 0 0 0.8rem #156ec7b4;
 }
 @media (max-width: 570px) {
 	.search-input {
