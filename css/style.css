@@ -54,25 +54,6 @@ a {
 .menu-link:hover {
 	color: #b3bcc7d2;
 }
-@media (max-width: 830px) {
-	.menu-link {
-		font-size: 1.8rem;
-	}
-	.menu-items {
-		gap: 4rem;
-	}
-}
-@media (max-width: 600px) {
-	.menu-items {
-		display: block;
-		text-align: center;
-	}
-}
-@media (max-width: 400px) {
-	.header-title {
-		font-size: 6rem;
-	}
-}
 
 /************************/
 /*       SEARCH        */
@@ -100,11 +81,6 @@ a {
 .search-input:focus {
 	outline: none;
 	box-shadow: 0 0 0 0.8rem #156ec7b4;
-}
-@media (max-width: 570px) {
-	.search-input {
-		width: 80%;
-	}
 }
 /*************************/
 /*        ARTICLE       */
@@ -135,7 +111,7 @@ a {
 }
 .article-img img {
 	width: 100%;
-	height: 400px;
+	height: 40rem;
 	object-fit: cover;
 }
 
@@ -172,19 +148,4 @@ a {
 .article-link:hover {
 	color: #000;
 	background-color: #fff;
-}
-
-@media (max-width: 1000px) {
-	.main {
-		grid-template-columns: repeat(2, 2fr);
-	}
-}
-
-@media (max-width: 670px) {
-	.main {
-		display: block;
-	}
-	.article {
-		margin-bottom: 4rem;
-	}
 }

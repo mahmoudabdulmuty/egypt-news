@@ -15,22 +15,22 @@ function createArticle(
 			articles.forEach((article) => {
 				const { title, description, url, urlToImage } = article;
 				document.querySelector('.main').innerHTML += `
-        <article class="article">
-        <div class="article-img">
-          <img src="${
+	      <article class="article">
+	      <div class="article-img">
+	        <img src="${
 						!urlToImage ||
 						urlToImage.includes('muhtwaplus') ||
 						urlToImage.includes('aljazeera.net')
 							? './img/No-Image-Available.jpg'
 							: urlToImage
 					}"/>
-        </div>
-        <div class="article-heading">
-          <h2 class="article-title">${title}</h2>
-          <p class="article-description">${description ?? ''}</p>
-        </div>
-        <a class="article-link" target="_blank" href="${url}">قراءة المزيد</a>
-      </article>`;
+	      </div>
+	      <div class="article-heading">
+	        <h2 class="article-title">${title}</h2>
+	        <p class="article-description">${description ?? ''}</p>
+	      </div>
+	      <a class="article-link" target="_blank" href="${url}">قراءة المزيد</a>
+	    </article>`;
 			});
 		}
 	};
