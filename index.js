@@ -1,20 +1,20 @@
-function createArticle(
+async function createArticle(
 	category = '',
 	apiLink = 'https://newsapi.org/v2/top-headlines?country=eg'
 ) {
 	const apiKey = '&apiKey=3bd4753c68144c04b3eb73e44b7da657';
 	document.querySelector('.main').textContent = '';
 
-	const xhr = new XMLHttpRequest();
-	xhr.open('GET', apiLink + category + apiKey);
-	xhr.onload = function () {
-		const articles = JSON.parse(this.response).articles;
-		if (articles.length === 0)
-			document.querySelector('.main').innerHTML = 'No data Found';
-		else if (this.status === 200) {
-			articles.forEach((article) => {
-				const { title, description, url, urlToImage } = article;
-				document.querySelector('.main').innerHTML += `
+	const response = await fetch(apiLink + category + apiKey);
+	const responseText = await response.json();
+
+	const articles = responseText.articles;
+	if (articles.length === 0)
+		document.querySelector('.main').innerHTML = 'No data Found';
+	else {
+		articles.forEach((article) => {
+			const { title, description, url, urlToImage } = article;
+			document.querySelector('.main').innerHTML += `
 	      <article class="article">
 	      <div class="article-img">
 	        <img src="${
@@ -31,14 +31,15 @@ function createArticle(
 	      </div>
 	      <a class="article-link" target="_blank" href="${url}">قراءة المزيد</a>
 	    </article>`;
-			});
-		}
-	};
-	xhr.send();
+		});
+	}
 }
 
 document.addEventListener('DOMContentLoaded', function () {
 	createArticle();
+	setTimeout(() => {
+		document.querySelector('.spinner-wrapper').classList.add('hide-spinner');
+	}, 450);
 });
 
 document
