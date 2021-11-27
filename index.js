@@ -1,3 +1,27 @@
+function displayArticles(articles) {
+	let displayedArticles = articles.map((article) => {
+		const { title, description, url, urlToImage } = article;
+		return `<article class="article">
+	      <div class="article-img">
+	        <img src="${
+						!urlToImage ||
+						urlToImage.includes('muhtwaplus') ||
+						urlToImage.includes('aljazeera.net')
+							? './img/No-Image-Available.jpg'
+							: urlToImage
+					}" alt= ${title}/>
+	      </div>
+	      <div class="article-heading">
+	        <h2 class="article-title">${title}</h2>
+	        <p class="article-description">${description ?? ''}</p>
+	      </div>
+	      <a class="article-link" target="_blank" href="${url}">قراءة المزيد</a>
+	    </article>`;
+	});
+	displayedArticles = displayedArticles.join('');
+	document.querySelector('.main').innerHTML = displayedArticles;
+}
+
 async function createArticle(
 	category = '',
 	apiLink = 'https://newsapi.org/v2/top-headlines?country=eg'
@@ -12,26 +36,7 @@ async function createArticle(
 	if (articles.length === 0)
 		document.querySelector('.main').innerHTML = 'No data Found';
 	else {
-		articles.forEach((article) => {
-			const { title, description, url, urlToImage } = article;
-			document.querySelector('.main').innerHTML += `
-	      <article class="article">
-	      <div class="article-img">
-	        <img src="${
-						!urlToImage ||
-						urlToImage.includes('muhtwaplus') ||
-						urlToImage.includes('aljazeera.net')
-							? './img/No-Image-Available.jpg'
-							: urlToImage
-					}"/>
-	      </div>
-	      <div class="article-heading">
-	        <h2 class="article-title">${title}</h2>
-	        <p class="article-description">${description ?? ''}</p>
-	      </div>
-	      <a class="article-link" target="_blank" href="${url}">قراءة المزيد</a>
-	    </article>`;
-		});
+		displayArticles(articles);
 	}
 }
 
@@ -39,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	createArticle();
 	setTimeout(() => {
 		document.querySelector('.spinner-wrapper').classList.add('hide-spinner');
-	}, 450);
+	}, 550);
 });
 
 document
